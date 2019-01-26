@@ -8,6 +8,8 @@ var config = {
     messagingSenderId: "592483104078"
   };
   firebase.initializeApp(config);
+  
+  var database = firebase.database();
 
 // initializing variables
   var name;
@@ -15,7 +17,7 @@ var config = {
   var startDate;
   var rate;
 
-database.ref().on("child_add", function(snapshot) {
+database.ref().on("child_added", function(snapshot) {
     console.log(snapshot);
     name = snapshot.val().name;
     role = snapshot.val().role;
