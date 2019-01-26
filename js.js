@@ -21,6 +21,21 @@ database.ref().on("child_add", function(snapshot) {
     role = snapshot.val().role;
     startDate = snapshot.val().startDate;
     rate = snapshot.val().rate;
+
+    var convertedStart = moment(startDate, "MM/DD/YYYY");
+
+    var monthsWorked = convertedStart.diff(moment(), "months");
+
+    var totalBilled = monthsWorked * rate; 
+
+    var newRow = "<tr>";
+    newRow = newRow + "<td>" + name + "</td>";
+    newRow = newRow + "<td>" + role + "</td>";
+    newRow = newRow + "<td>" + startDate + "</td>";
+    newRow = newRow + "<td>" + monthsWorked + "</td>";
+    newRow = newRow + "<td>" + rate + "</td>";
+    newRow = newRow + "<td>" + totalBilled + "</td>";
+    newRow = newRow + "</tr>";
 })
 
 $("#addButton").on("click",function() {
@@ -35,5 +50,5 @@ $("#addButton").on("click",function() {
         startDate: startDate,
         rate: rate
     })
-    
+
 });
