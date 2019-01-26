@@ -26,28 +26,34 @@
             <p>A Comprehensive Directory of Employee Billable Hours</p>
         </div>
 
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">Employee Name</th>
-                    <th scope="col">Role</th>
-                    <th scope="col">Months Worked</th>
-                    <th scope="col">Monthly Rate ($)</th>
-                    <th scope="col">Total Billed ($)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td id="name">Mark Williams</td>
-                    <td id="role">CEO</td>
-                    <td id="startDate">02/03/2019</td>
-                    <td id="months"></td>
-                    <td id="rate"></td>
-                    <td id="total"></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="container">
+            <h6>Current Employees</h6>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Employee Name</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Months Worked</th>
+                        <th scope="col">Monthly Rate ($)</th>
+                        <th scope="col">Total Billed ($)</th>
+                    </tr>
+                </thead>
+                <tbody id="entries">
+                    <tr>
+                        <td id="name">Mark Williams</td>
+                        <td id="role">CEO</td>
+                        <td id="startDate">02/03/2019</td>
+                        <td id="months"></td>
+                        <td id="rate"></td>
+                        <td id="total"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
 
+        <h6>Add Employee</h6>
         <form>
             <div class="form-group">
                 <label for="Employee Name">Employee Name</label>
@@ -66,6 +72,7 @@
                 <input type="input" class="form-control" id="rate-input" placeholder="1">
             </div>
         </form>
+
         <button class="btn btn-primary" type="submit" id="Submit">Submit</button>
 
         <script src="js.js"></script>
